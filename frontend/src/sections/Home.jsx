@@ -1,6 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import Loader from '../components/Loader/Loader'
 
 export default function Home() {
+	const [loading, setLoading] = useState(true)
+
+	useEffect(() => {
+		const timer = setTimeout(() => setLoading(false), 2000)
+		return () => clearTimeout(timer)
+	}, [])
+
+	if (loading) {
+		return <Loader />
+	}
+
 	return (
 		<section id="home" className="home-hero">
 			<div className="page-head">
