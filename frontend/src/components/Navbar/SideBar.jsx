@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function SideBar({ open, onClose }) {
   return (
@@ -7,9 +8,9 @@ export default function SideBar({ open, onClose }) {
       <div className="sidebar-overlay" onClick={onClose}></div>
       <nav className="sidebar-nav">
         <ul>
-          <li><a href="#home" onClick={onClose}>Home</a></li>
+          <li><NavLink to={'/'} onClick={onClose}>Home</NavLink></li>
           <li><a href="#about" onClick={onClose}>About Us</a></li>
-          <li><a href="#clubs" onClick={onClose}>Clubs</a></li>
+          <li><NavLink to={'/'} onClick={onClose}>Clubs</NavLink></li>
           <li><a href="#secretary" onClick={onClose}>Secretary</a></li>
           <li><a href="#calendar" onClick={onClose}>Calender</a></li>
           <li><a href="#contact" onClick={onClose}>Contact Us</a></li>

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import './NavBar.css'
 import logo from '../../assets/synclogo.svg'
-import Hamburger from '../Hamburger'
-import SideBar from '../SideBar'
+import Hamburger from './Hamburger'
+import SideBar from './SideBar'
 import { useNavigate } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
 
 export default function Navbar(){
   const [open, setOpen] = useState(false)
@@ -28,7 +29,7 @@ export default function Navbar(){
       {isMobile && (
         <>
         <div className="nav-right">
-          <button className='btn-primary absolute right-15' onClick={()=>navigate("/login")}>Login</button>
+          <button className='btn-primary absolute right-15 mt-4' onClick={()=>navigate("/login")}>Login</button>
           <Hamburger open={open} onClick={handleHamburger} />
         </div>
         </>
@@ -36,9 +37,9 @@ export default function Navbar(){
       {!isMobile && (
         <nav className="nav-center inline-flex" role="navigation" aria-label="Top navigation">
           <ul className="top-nav">
-            <li><a href="#home">Home</a></li>
+            <li><NavLink to={"/"}>Home</NavLink></li>
             <li><a href="#about">About Us</a></li>
-            <li><a href="#clubs">Clubs</a></li>
+            <li><NavLink to={'/clubs'}>Clubs</NavLink></li>
             <li><a href="https://www.gdgaitpune.me">Team</a></li>
             <li><a href="#calendar">Calender</a></li>
             <li><a href="#contact">Contact Us</a></li>

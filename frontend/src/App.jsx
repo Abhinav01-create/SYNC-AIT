@@ -1,9 +1,9 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import MainContent from "./components/MainContent";
-import Login from "./pages/Auth/Login";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./sections/Footer/Footer";
+import PublicRoutes from "./Routes/PublicRoutes";
+import ProtectedRoutes from "./Routes/ProtectedRoutes"; 
+
 
 export default function App() {
   return (
@@ -12,10 +12,8 @@ export default function App() {
         <Navbar />
         <div className="site-container">
           <main className="main">
-            <Routes>
-              <Route path="/" element={<MainContent />} />
-              <Route path="/login" element={<Login />} />
-            </Routes>
+            <PublicRoutes/>
+            <ProtectedRoutes/>
           </main>
         </div>
         <Footer />
